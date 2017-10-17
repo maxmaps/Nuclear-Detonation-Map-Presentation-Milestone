@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nuclear Detonation Map</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- leaflet css -->
+        <link type="text/css" rel="stylesheet" href="libraries/leaflet/leaflet.css" />
+        <!-- bootstrap css -->
+        <link type="text/css" rel="stylesheet" href="libraries\bootstrap-4.0.0-beta\dist\css\bootstrap.min.css">
+        <!-- markercluster plugin css -->
+        <link type="text/css" rel="stylesheet" href="libraries\Leaflet.markercluster-1.1.0\dist\MarkerCluster.css">
+        <link type="text/css" rel="stylesheet" href="libraries\Leaflet.markercluster-1.1.0\dist\MarkerCluster.Default.css">
+        <!-- timeline plugin css -->
+        <link type="text/css" rel="stylesheet" href="libraries\Leaflet.timeline-master\dist\leaflet.timeline.min.css">
+        <!-- custom css -->
+        <link type="text/css" rel="stylesheet" href="css/stylesheet.css">
+    </head>
+    <body>
+        <div id="infoLeft">
+            <h1>Updated List Placeholder</h1>
+        </div>
+        <div id="mapid"></div>
+        <div id="infoRight">
+            <h1>Info Key</h1>
+            <p><strong><i>Name</i></strong> gives the name of the event. Longer names are shortened and in some cases where the abbreviations cannot be readily interpreted the full name is given as a footnote which can be accessed in the full Sipri Nuclear Explosions document.</p>
+            <p><strong><i>Country</i></strong> lists the state that carried out the explosion.</p>
+            <p><strong><i>Date</i></strong> is listed as the day, month, and year of the explosion. Date is listed in Greenwich Mean Time (GMT).</p>
+            <p><strong><i>Region</i></strong> gives the name of the test site and/or the geographical region where the explosion was conducted.</p>
+            <p>
+                    <table>
+                            <tr><td>AK</td><td>Alaska</td></tr>
+                            <tr><td>ALG</td><td>Algeria</td></tr>
+                            <tr><td>ARK</td><td>Arkhangelsk region</td></tr>
+                            <tr><td>AUSTR</td><td>Australia</td></tr>
+                            <tr><td>CO</td><td>Colorado</td></tr>
+                            <tr><td>FALLON</td><td>Naval Air Station, Fallon, Nevada</td></tr>
+                            <tr><td>IS</td><td>Island</td></tr>
+                            <tr><td>KAZAKH</td><td>Kazakhstan</td></tr>
+                            <tr><td>KRASNO</td><td>Krasnoyarsk territory</td></tr>
+                            <tr><td>MANGY</td><td>Mangyshlak</td></tr>
+                            <tr><td>MARALI</td><td>Maralinga</td></tr>
+                            <tr><td>MONTEB</td><td>Montebello</td></tr>
+                            <tr><td>MS</td><td>Mississippi</td></tr>
+                            <tr><td>MTR</td><td>Missile Testing Range (near Kapustin Yar, Astrakhan region, Russia)</td></tr>
+                            <tr><td>MURM</td><td>Murmansk</td></tr>
+                            <tr><td>NELLIS</td><td>Nellis Air Force Range, Nevada</td></tr>
+                            <tr><td>NM</td><td>New Mexico</td></tr>
+                            <tr><td>NTS</td><td>Nevada Test Site</td></tr>
+                            <tr><td>NV</td><td>Nevada</td></tr>
+                            <tr><td>NZ</td><td>Novaya Zemlya (Northern Test Site, in the Arctic Ocean, Russia)</td></tr>
+                            <tr><td>RUSS</td><td>Russia</td></tr>
+                            <tr><td>SEMI</td><td>Semipalatinsk test site (in east Kazakhstan)</td></tr>
+                            <tr><td>STAVRO</td><td>Stavropol territory (Russia)</td></tr>
+                            <tr><td>TURKMEN</td><td>Turkmenistan</td></tr>
+                            <tr><td>UZBEK</td><td>Uzbekistan</td></tr>
+                            <tr><td>V</td><td>Valley</td></tr>
+                    </table>
+            </p>
+            <p>Other names are also slightly abbreviated, but, since they are easily recognizable, they are not listed above.</p>
+            <p><strong><i>Type</i></strong> refers to the method of deployment of the nuclear device:</p>
+            <p>There are two categories: atmospheric (ATMOSPH) and underground (UG). When no futher details are available, only ATMOSPH or UG is listed.</p>
+            <p>When atmospheric explosions were conducted, the divice was dropped from a balloon (BALLOON) or an aircraft (AIRDROP), launched by a rocket (ROCKET), mounted at the top of a steel or wooden tower (TOWER), placed on a boat (BARGE), on the surface of the sea (WATERSURFACE), on the ground close to the earth's surface (SURFACE), or in a crater (CRATER). A few nuclear tests were conducted under water (UW).</p>
+            <p>Underground explosions were either conducted at the bottom of drilled or mined vertical holes or shafts (SHAFT) or in horizontal tunnels (TUNNEL or GALLERY) drilled into a mountain or mesa in a way that places the burst point deep within the earth. One Soviet PNE was conducted in a mine (MINE).</p>
+            <p>French underground tests in Polynesia were either conducted in wells in the ground (SHAFT/G) or in drilled holes in the lagoon of the atoll (SHAFT/LG).</p>
+            <p><strong><i>Purpose</i></strong> indicates the purpose for which the explosion was conducted:</p>
+            <p>COMBAT = The two atomic bombs dropped over Hiroshima and Nagasaki in August 1945.</p>
+            <p>FMS (used for Soviet tests) = To study the phenomena of a nuclear explosion.</p>
+            <p>ME = Test conducted in the context of a military exercise with a real nuclear detonation. One such test (Soviet) was conducted, in 1954.</p>
+            <p>PNE = Peaceful nuclear explosion. The US PNEs were either in the Plowshare Programme (PNE:PLO) or Vela Uniform Tests (PNE:V). The Soviet PNEs include both industrial peaceful explosions and testing of PNE technologies as well as testing of industrial nuclear charges for use in peaceful activities.
+            </p>
+            <p>SAM (used for Soviet tests) = Tests to study accidental modes and emergencies.</p>
+            <p>SE (used for French and US tests) = Tests to determine the safety of nuclear weapons in case of accident.</p>
+            <p>TRANSP = Transportation-storage purposes. (Four US tests conducted at Nellis Air Force Range in 1963.)</p>
+            <p>WE (used for British, French, and US tests) = To evaluate the effects of a nuclear detonation on various targets.</p>
+            <p>WR = Weapons-related, i.e. related to the weapon development programme. (N.B. if no information on purpose of a test is available, WR is listed.)</p>
+            <p><strong><i>Depth</i></strong> estimates show, in kilometers, how deep in the ground the explosions were conducted. Some height estimates are also given to indicate the altitude at which atmospheric tests were conducted. A positive figure indicates depth, a negative figure indicates height.</p>
+            <p><strong><i>Lower Yield</i></strong> and <strong><i>Upper Yield</i></strong></p> indicates the range of yield. For most explostions, lower and upper yield estimates are given. If an exact yield is available, the upper figure and lower figure are the same. Unless otherwise noted in the footnotes located in the full Sipri Nuclear Explosions document, for salvo explosions the yield estimate indicates the yield of each detonation in a test or a peaceful nuclear explosion.
+        </div>
+        <div id="dataInfo">
+            <p>For more information and access to the data source, refer to the <a href="data\nuclear-explosions\documents\sipri-report-original.pdf">Sipri Nuclear Explosions 1945 - 1998</a> document</p>
+        </div>
+    </body>
+        <!-- jquery js -->
+        <script type="text/javascript" src="libraries/jQuery/jquery-3.2.1.min.js"></script>
+        <!-- leaflet js -->
+        <script type="text/javascript" src="libraries/leaflet/leaflet.js"></script>
+        <!-- popper js -->
+        <script type="text/javascript" src="libraries\bootstrap-4.0.0-beta\assets\js\vendor\popper.min.js"></script>
+        <!-- bootstrap js -->
+        <script type="text/javascript" src="libraries\bootstrap-4.0.0-beta\dist\js\bootstrap.min.js"></script>
+        <!-- moment js -->
+        <script type="text/javascript" src="libraries\moment\moment.min.js"></script>
+        <!-- markercluster plugin js -->
+        <script type="text/javascript" src="libraries\Leaflet.markercluster-1.1.0\dist\leaflet.markercluster-src.js"></script>
+        <!-- timeline plugin js -->
+        <script type="text/javascript" src="libraries\Leaflet.timeline-master\dist\leaflet.timeline.min.js"></script>
+        <!-- custom js -->
+        <script type="text/javascript" src="js/script.js"></script>
+</html>

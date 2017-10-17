@@ -1,0 +1,52 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.leaflet-bottom.leaflet-left{
+    width: 100%;
+}
+
+.leaflet-control-container .leaflet-timeline-controls{
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+#mapid {
+    position: fixed;
+    top: 0;
+    left: 20%;
+    bottom: 0;
+    right: 20%;
+}
+
+#infoLeft {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 20%;
+    padding: 1em;
+}
+
+#infoRight {
+    position: fixed;
+    top: 0;
+    left: 80%;
+    bottom: 15%;
+    width: 20%;
+    padding: 1em;
+    overflow: scroll;
+}
+
+#dataInfo {
+    position: fixed;
+    top: 85%;
+    left: 80%;
+    bottom: 0;
+    width: 20%;
+    padding: 1em;
+}
